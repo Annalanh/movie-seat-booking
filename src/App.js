@@ -4,6 +4,7 @@ import "./App.css"
 import styled from "styled-components"
 import Booking from "./Booking"
 import Homepage from "./Homepage"
+import Payment from "./Payment"
 
 import { Route, Link } from "react-router-dom"
 import Navbar from "./Navbar"
@@ -32,6 +33,7 @@ const App = () => {
 			<img class="movieposter" src="toystory.png" /> */}
 			<Route exact path="/home" component={Homepage} />
 			<Route exact path="/booking/:id" component={Booking} />
+			<Route exact path="/payment" component={Payment} />
 		</div>
 	)
 }
