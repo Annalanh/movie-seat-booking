@@ -5,8 +5,6 @@ import './styles/Seat.css'
 import MovieContext from "../contexts/MovieContext"
 
 const GenerateSeats = (seatNumbers, occupiedSeats) => {
-	console.log("seatNumber", seatNumbers)
-	console.log("occupiedSeats", occupiedSeats)
 	return (
 		<div className="row">
 			{
@@ -26,7 +24,6 @@ const GenerateSeats = (seatNumbers, occupiedSeats) => {
 
 const SeatMatrix = (props) => {
 	const { movie, changeState, chosenSeats } = useContext(MovieContext)
-	console.log("movie", movie)
 	return (
 		<div className="movie-complex">
 			<img class="screen" src="screen.png"></img>
