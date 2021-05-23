@@ -9,6 +9,8 @@ import GithubLogo from './components/GithubLogo'
 import MovieContext from './contexts/MovieContext'
 import styled from "styled-components"
 
+const axios = require('axios');
+
 const Button = styled.button`
   background-color: red;
   color: white;
@@ -28,6 +30,20 @@ const Booking = () => {
 	const [loading, setLoading] = useState(true)
 	//call rest api to get movie data
 	useEffect(() => {
+		// axios.get('/bookings/', {
+		// 	params: {
+		// 		movieId: id
+		// 	}
+		// })
+		// 	.then(function (res) {
+		// 		if (res.status) {
+		// 			setMovie(res.movie)
+		// 			setLoading(false)
+		// 		} else {
+		// 			console.log(res.message)
+		// 		}
+		// 	})
+
 		let movie = {
 			id: id,
 			name: "Avenger",

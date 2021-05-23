@@ -8,7 +8,7 @@ import Payment from "./Payment"
 import Login from "./Login"
 import MyOrders from "./MyOrders"
 
-import { Route, Link } from "react-router-dom"
+import { Route, Link, Redirect } from "react-router-dom"
 import Navbar from "./Navbar"
 function sayHello() {
 	alert('You clicked me!');
@@ -27,6 +27,7 @@ const Button = styled.button`
 const App = () => {
 	return (
 		<div className="App">
+			<Redirect exact from="/" to="/home" />
 			<Route exact path="/home" component={Homepage} />
 			<Route exact path="/login" component={Login} />
 			<Route exact path="/booking/:id" component={Booking} />

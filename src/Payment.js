@@ -1,6 +1,9 @@
 import React, { useState } from "react"
 import { useLocation } from "react-router-dom";
 import "./Payment.css";
+
+const axios = require('axios');
+
 const Payment = () => {
     const url = useLocation();
     const movieId = new URLSearchParams(url.search).get("movie-id")
@@ -12,7 +15,26 @@ const Payment = () => {
     const [password, setPassword] = useState("");
 
     const handlePay = () => {
-        console.log(username, password, movieId, chosenSeats)
+        // axios.post('/pay', {
+        //     username,
+        //     password,
+        //     amount: payment,
+        //     receiver: "Cinema"
+        // })
+        //     .then(function (res) {
+        //         if (res.status) {
+        //             axios.post('/book', {
+        //                 movieId,
+        //                 chosenSeats,
+        //                 username
+        //             })
+        //                 .then(function (res) {
+        //                     alert(res.message)
+        //                 })
+        //         } else {
+        //             alert(res.message)
+        //         }
+        //     })
     }
     const handleOnChangeUsername = (e) => {
         setUsername(e.target.value)
