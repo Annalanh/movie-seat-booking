@@ -16,15 +16,19 @@ const Hompage = () => {
                         <a className="nav-link active" href="#">Home</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#">Schedule</a>
+                        <a className="nav-link" href="/my-orders">My Orders</a>
                     </li>
                 </ul>
 
                 <ul className="navbar-nav ml-auto">
+
                     <div class="searchbar nav-item">
                         <input class="search_input" type="text" name="" placeholder="Search..." />
                         <div class="search_icon"><i class="fas fa-search"></i></div>
                     </div>
+                    <li className="nav-item">
+                        <a className="nav-link" href="/login"><i class="fas fa-sign-in-alt"></i></a>
+                    </li>
                 </ul>
             </nav>
             <div className="slideshow-container">

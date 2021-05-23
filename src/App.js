@@ -5,6 +5,8 @@ import styled from "styled-components"
 import Booking from "./Booking"
 import Homepage from "./Homepage"
 import Payment from "./Payment"
+import Login from "./Login"
+import MyOrders from "./MyOrders"
 
 import { Route, Link } from "react-router-dom"
 import Navbar from "./Navbar"
@@ -23,17 +25,13 @@ const Button = styled.button`
 `;
 
 const App = () => {
-
 	return (
-
 		<div className="App">
-			{/* <img class="movieposter" src="avenger.png" />
-			<img class="movieposter" src="batman.png" />
-			<img class="movieposter" src="titanic.png" />
-			<img class="movieposter" src="toystory.png" /> */}
 			<Route exact path="/home" component={Homepage} />
+			<Route exact path="/login" component={Login} />
 			<Route exact path="/booking/:id" component={Booking} />
 			<Route exact path="/payment" component={Payment} />
+			<Route exact path="/my-orders" component={MyOrders} />
 		</div>
 	)
 }

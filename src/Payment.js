@@ -5,7 +5,7 @@ const Payment = () => {
     const url = useLocation();
     const movieId = new URLSearchParams(url.search).get("movie-id")
     const strChosenSeats = new URLSearchParams(url.search).get("chosen-seats")
-    const chosenSeats = strChosenSeats.substring(1, strChosenSeats.length - 1).split(",").map(seat => Number(seat))
+    const chosenSeats = strChosenSeats.split(",").map(seat => Number(seat))
     const payment = new URLSearchParams(url.search).get("payment")
 
     const [username, setUsername] = useState("");
@@ -24,7 +24,7 @@ const Payment = () => {
         <div className="payment-container">
             <div className="payment">
                 <h4 className="payment-title">Payment Details</h4>
-                <h5 className="payment-title-2">Account Details</h5>
+                <h5 className="payment-title-2">Bank Account Details</h5>
                 <form>
                     <div class="form-row">
                         <div class="form-group col-md-6">

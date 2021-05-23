@@ -9,10 +9,6 @@ import GithubLogo from './components/GithubLogo'
 import MovieContext from './contexts/MovieContext'
 import styled from "styled-components"
 
-function payment() {
-	//window.open("localhost:3000/payment")
-}
-
 const Button = styled.button`
   background-color: red;
   color: white;
@@ -32,7 +28,6 @@ const Booking = () => {
 	const [loading, setLoading] = useState(true)
 	//call rest api to get movie data
 	useEffect(() => {
-		console.log("alo")
 		let movie = {
 			id: id,
 			name: "Avenger",
@@ -43,6 +38,10 @@ const Booking = () => {
 		setMovie(movie)
 	}, []);
 
+	const handlePayment = () => {
+		window.location.href = `/payment?movie-id=${movie.id}&chosen-seats=${chosenSeats}&payment=${movie.moviePrice * chosenSeats.length}`
+	}
+
 	return (
 		<div className="main container">
 			{
@@ -51,7 +50,7 @@ const Booking = () => {
 					<SeatMatrix />
 					<SeatAvailability />
 					<PriceCalculator />
-					<Button onClick={payment}> Payment </Button>
+					<Button onClick={handlePayment}> Payment </Button>
 				</MovieContext.Provider>)
 			}
 
