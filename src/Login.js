@@ -6,6 +6,7 @@ const Login = () => {
 
     const handleLogin = () => {
         window.localStorage.setItem("username", username)
+        window.location.href = "/home"
     }
     const handleOnChangeUsername = (e) => {
         setUsername(e.target.value)

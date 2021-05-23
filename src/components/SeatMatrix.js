@@ -26,7 +26,7 @@ const SeatMatrix = (props) => {
 	const { movie, changeState, chosenSeats } = useContext(MovieContext)
 	return (
 		<div className="movie-complex">
-			<img class="screen" src="screen.png"></img>
+			<img class="screen" src="/screen.png"></img>
 			<div className="container row movie-layout">
 				<div className="movie-column-1">
 					{GenerateSeats([1, 2, 3, 4], movie.occupiedSeats)}

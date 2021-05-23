@@ -6,6 +6,9 @@ const getTickets = (movie) => {
 }
 
 const Hompage = () => {
+    let isLoggedIn = false;
+    const username = window.localStorage.getItem("username")
+    if (username) isLoggedIn = true
     return (
         <>
             <nav className="navbar navbar-expand-sm navbar-dark">
@@ -26,9 +29,18 @@ const Hompage = () => {
                         <input class="search_input" type="text" name="" placeholder="Search..." />
                         <div class="search_icon"><i class="fas fa-search"></i></div>
                     </div>
-                    <li className="nav-item">
-                        <a className="nav-link" href="/login"><i class="fas fa-sign-in-alt"></i></a>
-                    </li>
+                    {
+                        isLoggedIn ? (
+                            <li className="nav-item">
+                                <a className="nav-link" style={{ color: "white" }} href="/login">Welcome, {username}</a>
+                            </li>
+                        ) : (
+                            <li className="nav-item">
+                                <a className="nav-link" href="/login"><i class="fas fa-sign-in-alt"></i></a>
+                            </li>
+                        )
+                    }
+
                 </ul>
             </nav>
             <div className="slideshow-container">

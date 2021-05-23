@@ -27,7 +27,7 @@ const Button = styled.button`
 const App = () => {
 	return (
 		<div className="App">
-			<Redirect exact from="/" to="/home" />
+			<Route exact path="/" component={Homepage} />
 			<Route exact path="/home" component={Homepage} />
 			<Route exact path="/login" component={Login} />
 			<Route exact path="/booking/:id" component={Booking} />
